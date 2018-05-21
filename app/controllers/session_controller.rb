@@ -7,7 +7,7 @@ class SessionController < ApplicationController
 
     if user.present? && user.authenticate( params[:password] )
       session[:user_id] = user.id
-      redirect_to products_path
+      redirect_to categories_path
     else
       flash[:error] = "Invalid emial address or password"
       redirect_to login_path

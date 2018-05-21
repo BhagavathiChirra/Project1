@@ -12,7 +12,8 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.all
+    raise 'hell'
+    @products = Product.find_by params[:id]
   end
 
   def show

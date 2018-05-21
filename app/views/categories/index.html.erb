@@ -1,0 +1,10 @@
+<h1>Categories</h1>
+
+<% @categories.each do |c| %>
+  <%= link_to category_path(c) do %>
+    <div class="products_all">
+      <%= image_tag c.image%>
+      <%= c.name %>
+    </div>
+  <% end %>
+<% end %>
