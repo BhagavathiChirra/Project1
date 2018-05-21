@@ -12,7 +12,6 @@ class ProductsController < ApplicationController
   end
 
   def index
-    raise 'hell'
     @products = Product.find_by params[:id]
   end
 
@@ -24,7 +23,7 @@ class ProductsController < ApplicationController
 
   def update
     @product.update product_params
-    redirect_to products_path
+    redirect_to product_path
   end
 
   def destroy
