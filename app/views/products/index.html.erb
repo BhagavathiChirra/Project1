@@ -1,7 +1,6 @@
 <h1>All Products</h1>
-
 <% @products.each do |p| %>
-  <%= link_to product_path(p) do%>
+  <%= link_to product_path(p), class: :link_txt_dec do %>
     <div class="products_all">
       <%= image_tag p.image%>
       <%= p.name %>$<%= p.price%>

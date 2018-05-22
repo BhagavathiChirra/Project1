@@ -1,7 +1,7 @@
 <h1>Categories</h1>
 
 <% @categories.each do |c| %>
-  <%= link_to category_path(c) do %>
+  <%= link_to category_path(c), class: :link_txt_dec do %>
     <div class="products_all">
       <%= image_tag c.image%>
       <%= c.name %>

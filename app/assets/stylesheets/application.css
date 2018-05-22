@@ -32,8 +32,8 @@
    margin: 5px;
  }
  img{
-   max-height: 230px;
-   max-width: 240px;
+   height: 230px;
+   width: 240px;
  }
  .button{
    padding:8px;
@@ -43,6 +43,12 @@
    color: rgb(12, 67, 103);
    font-size: 14px;
    cursor: pointer;
+ }
+ .link_txt_dec{
+   text-decoration: none; /* no underline for links */
+   font-family: sans-serif;
+   font-size: 18px;
+   text-align: center;
  }
 
 .right_nav{

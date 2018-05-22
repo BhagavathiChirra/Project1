@@ -20,4 +20,10 @@ class ApplicationController < ActionController::Base
     session[:user_id] = nil unless @current_user.present?
 
   end
+  def check_if_admin
+    unless @current_user.admin
+      flash[:error] = "You must be logged in as admin to view that page."
+      redirect_to login_path
+    end
+  end
 end
