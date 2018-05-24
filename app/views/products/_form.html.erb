@@ -1,18 +1,27 @@
+
+<% if flash[:errors] %>
+  <strong>Please correct the following errors:</strong>
+  <ol>
+    <% flash[:errors].each do |e| %>
+      <li><%= e %></li>
+    <% end %>
+  </ol>
+<% end %>
 <%= form_for(@product, :html => {:multipart => true}) do |f| %>
-  <%= f.label :name%>
-  <%= f.text_field :name%>
+  <%= f.label :name, 'Name :'%>
+  <%= f.text_field :name, class: :field%>
   <br>
-  <%= f.label :price%>
-  <%= f.text_field :price%>
+  <%= f.label :price, 'Price :'%>
+  <%= f.text_field :price, class: :field%>
   <br>
-  <%= f.label :description%>
-  <%= f.text_field :description%>
+  <%= f.label :description, 'Description :'%>
+  <%= f.text_field :description, class: :field%>
   <br>
-  <%= f.label :category_id, 'Category' %>
-  <%= f.select :category_id, Category.pluck(:name, :id), include_blank: true %>
+  <%= f.label :category_id, 'Category :' %>
+  <%= f.select :category_id, Category.pluck(:name, :id), include_blank: true , class: :field%>
   <br>
-  <%= f.label :image%>
-  <%= f.cl_image_upload :image%>
+  <%= f.label :image, 'Image :'%>
+  <%= f.cl_image_upload :image, default_image: "no_image.png", class: :field%>
   <br>
   <%= f.submit%>
 <% end %>

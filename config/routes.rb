@@ -1,17 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'cart/show'
   root to: "pages#home"
 
   get "/login" => "session#new" # ahow the login form
   post "/login" => "session#create" # submit the login and authenticate
   delete "/login" => "session#destroy"
 
-  post "/products/:id/add_to_cart" => "products#add", as: :add_to_cart
+  post "/products/:id/add_to_cart" => "cart#add", as: :add_to_cart
 
-  get "/pages" => "pages#cart", as:"show_cart"
+  get "/cart" => "cart#show", as:"show_cart"
 
-  delete "/cart/:id/remove" => "products#remove", as: :remove_from_cart
+  delete "/cart/:id/remove" => "cart#remove", as: :remove_from_cart
 
+  get "/cart/:id/check_out" => "cart#check_out", as: :check_out
 
   get 'pages/home'
   resources :users , :products, :categories

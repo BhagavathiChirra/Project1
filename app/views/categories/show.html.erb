@@ -3,7 +3,11 @@
 <% @products.each do |p| %>
     <%= link_to product_path(p), class: :link_txt_dec do %>
       <div class="products_all">
-        <%= cl_image_tag(p.image)%>
+        <% if p.image.present? %>
+          <%= cl_image_tag(p.image)%>
+        <% else %>
+          <%= image_tag "no_image.png" %>
+        <% end %>
         <%= p.name %>
         <%= number_to_currency(p.price) %>
       </div>

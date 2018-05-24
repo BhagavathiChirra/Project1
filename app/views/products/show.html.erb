@@ -21,3 +21,26 @@
   |
   <%=  link_to "Delete", product_path(@product), method: :delete%>
 <% end %>
+<br>
+<br>
+<div id="map"> </div>
+<script>
+
+      function initMap() {
+        var myLatLng = {lat: <%= @product.latitude %>, lng: <%= @product.longitude %>};
+        console.log('INITMAP', myLatLng);
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 14,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+      }
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ0a73hhDIswEV4mTLGjmLIx4oHHFUelM&callback=initMap">
+    </script>

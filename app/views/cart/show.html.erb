@@ -1,12 +1,14 @@
 <h1>Show Cart</h1>
-
-<table>
-    <tr>
-      <td><strong>Product</strong></td>
-      <td><strong>Category</strong></td>
-      <td><strong>Price</strong></td>
-      <td></td>
+<table class="table table-striped table-success">
+  <thead class="thead-dark">
+    <tr scope="row">
+      <th scope="col"><strong>Product</strong></th>
+      <th scope="col"><strong>Category</strong></th>
+      <th scope="col"><strong>Price</strong></th>
+      <th scope="col"></th>
     </tr>
+  </thead>
+    <tbody>
     <% @cart.each do |c| %>
     <tr>
       <td>
@@ -23,6 +25,8 @@
       </td>
     </tr>
     <% end %>
+    </tbody>
 </table>
-
+<br>
+<br>
 <%= button_to 'Check Out', check_out_path(@cart), class: :button%>
