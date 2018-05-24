@@ -49,6 +49,10 @@ class ProductsController < ApplicationController
     redirect_to category_path(p.category)
   end
 
+  def search
+    @products = Product.where("name ILIKE?", "%#{params[:query]}%")
+  end
+
   private
   def get_product
     @product = Product.find params[:id]
@@ -56,6 +60,6 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :price, :description, :category_id)
+    params.require(:product).permit(:name, :price, :description, :address, :category_id, :image)
   end
 end

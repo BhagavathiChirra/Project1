@@ -15,6 +15,10 @@
       <h1>Shopping Cart</h1>
       <nav class="right_nav">
         <% if @current_user.present?%>
+          <%= form_tag product_search_path, method: :get do %>
+            <%= text_field_tag :query, nil, placeholder: 'Serch Keywords' %>
+            <%= submit_tag "Search" %>
+          <% end %>
           <%= link_to 'Home', categories_path%>
           <%= link_to 'Cart', show_cart_path%>
           Welcome, <%= @current_user.name%>
@@ -37,6 +41,10 @@
       </div>
       <hr>
       <%= yield %>
+      <hr>
+      <footer class="footer">
+      &copy; Free Shop
+    </footer>
   </div>
 </body>
 </html>

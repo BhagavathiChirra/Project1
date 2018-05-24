@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get "/cart/:id/check_out" => "cart#check_out", as: :check_out
 
   get 'pages/home'
+  get '/search' => "products#search", as: :product_search
   resources :users , :products, :categories
   # resources :products
   # resources :categories
