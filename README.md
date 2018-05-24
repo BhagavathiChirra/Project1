@@ -1,24 +1,69 @@
-# README
+# Basic Shopping Cart
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Basic Shopping Cart is an online shopping website developed on Rails
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+The website is available live via the following link:
 
-* System dependencies
+https://proshoppingcart.herokuapp.com/
 
-* Configuration
+## Libraries used
 
-* Database creation
+* jQuery
 
-* Database initialization
+* bootstrap
 
-* How to run the test suite
+## Other Services
 
-* Services (job queues, cache servers, search engines, etc.)
+* Google maps
 
-* Deployment instructions
+* Cloudinary.com
 
-* ...
+## Technologies
+
+1. *Database* Postgres
+
+2. *Language* Ruby
+
+3. *Framework* Rails
+
+## Features
+
+**Authentication**
+
+* Allowing the users to sign up and login to browse the products
+
+**Autherization**
+
+1. *Admin* Letting the user to Add, Update, Delete a product, if the user is an admin
+
+2. *User* Else the user can browse the products and add them to the cart
+
+**Search**
+
+* Allowing the user to search for a product based on a word of the product name
+
+**Maps**
+
+* Displaying the maps where exactly the location of the product is
+
+**Other Features**
+
+* Allowing the user to browse the products according to the category
+
+* Displaying larger image on when the mouse enters and off when the mouse leaves
+
+* Displaying the cart and allowing the user to delete a product from the cart
+
+## Deployment
+
+* herokuapp
+
+## Features to be Implemented
+
+* Displaying multiple images for a product
+
+* Checkout
+
+* Cart expiry

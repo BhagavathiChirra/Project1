@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get 'cart/show'
-  root to: "pages#home"
+  root to: "session#new"
 
   get "/login" => "session#new" # ahow the login form
   post "/login" => "session#create" # submit the login and authenticate

@@ -17,3 +17,26 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
+
+$( document ).ready(function() {
+  $('#img_product').hover(
+    function(){
+      // $(this).css("cursor","pointer");
+      $('#images_div').show();
+      // $(this).css('transform', 'scale(2, 2)')
+    },
+    function() {
+      $('#images_div').hide();
+    }
+  );
+});
+
+//
+// $('#img_product').mouseenter(function() {
+//     $(this).css("cursor","pointer");
+//     $(this).animate({width: "50%", height: "50%"}, 'slow');
+// });
+//
+// $('#img_product').mouseleave(function() {
+//     $(this).animate({width: "28%"}, 'slow');
+// });
