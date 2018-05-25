@@ -34,7 +34,7 @@ https://proshoppingcart.herokuapp.com/
 
 * Allowing the users to sign up and login to browse the products
 
-**Autherization**
+**Authorization**
 
 1. *Admin* Letting the user to Add, Update, Delete a product, if the user is an admin
 
@@ -59,6 +59,10 @@ https://proshoppingcart.herokuapp.com/
 ## Deployment
 
 * herokuapp
+
+## Known bugs
+
+* While editing a product image file is not showing the image for that product
 
 ## Features to be Implemented
 

@@ -13,3 +13,29 @@
       </div>
     <% end %>
 <% end %>
+
+<div id="map"> </div>
+<script>
+  function initMap() {
+    var myLatLng = {lat: -33.87145, lng: 151.20443};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 14,
+      center: myLatLng
+    });
+    // getting products from instance variable
+    var products = <%= @products.to_json.html_safe %>;
+    // looping over products to make marker for each product
+    for(let i=0; i<= products.length; i++)
+    {
+      myLatLng = {lat: products[i].latitude, lng: products[i].longitude};
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'Hello World!'
+      });
+    }
+  }
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ0a73hhDIswEV4mTLGjmLIx4oHHFUelM&callback=initMap">
+    </script>
