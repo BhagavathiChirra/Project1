@@ -43,11 +43,10 @@
           zoom: 14,
           center: myLatLng
         });
-
         var marker = new google.maps.Marker({
           position: myLatLng,
           map: map,
-          title: 'Hello World!'
+          title: "<%= @product.name %>"
         });
       }
 </script>

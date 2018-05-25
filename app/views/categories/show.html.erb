@@ -1,5 +1,20 @@
 <h1>Products</h1>
-
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+      <%= image_tag "https://foodheart.org/assets/toys-main-c5824ff6cd696a4d896490aa7fad8ba2.png", class:"d-block img-fluid"%>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag "designer_chocker.png", class:"d-block img-fluid"%>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag "teddys.jpeg", class:"d-block img-fluid"%>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag "two_pots.jpeg", class:"d-block img-fluid"%>
+    </div>
+  </div>
+</div>
 <% @products.each do |p| %>
     <%= link_to product_path(p), class: :link_txt_dec do %>
       <div class="products_all">
@@ -17,23 +32,22 @@
 <div id="map"> </div>
 <script>
   function initMap() {
-    var myLatLng = {lat: -33.87145, lng: 151.20443};
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 14,
-      center: myLatLng
-    });
-    // getting products from instance variable
-    var products = <%= @products.to_json.html_safe %>;
+    // var myLatLng = {lat: -33.87145, lng: 151.20443};
+    var bounds = new google.maps.LatLngBounds();
+    var map = new google.maps.Map(document.getElementById('map'));
+    // getting products lat, lng, name from instance variable
+    var products = <%= @products.map{ |p| {lat: p.latitude, lng: p.longitude, name: p.name } }.to_json.html_safe %>;
     // looping over products to make marker for each product
-    for(let i=0; i<= products.length; i++)
+    for(let i=0; i < products.length; i++)
     {
-      myLatLng = {lat: products[i].latitude, lng: products[i].longitude};
       var marker = new google.maps.Marker({
-        position: myLatLng,
+        position: products[i],
         map: map,
-        title: 'Hello World!'
+        title: products[i].name
       });
+      bounds.extend(marker.position);
     }
+    map.fitBounds( bounds );
   }
 </script>
 <script async defer
