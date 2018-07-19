@@ -1,15 +1,18 @@
 <h1>Products</h1>
-
-<% @products.each do |p| %>
-    <%= link_to product_path(p), class: :link_txt_dec do %>
-      <div class="products_all">
-        <% if p.image.present? %>
-          <%= cl_image_tag(p.image)%>
-        <% else %>
-          <%= image_tag "no_image.png" %>
-        <% end %>
-        <%= p.name %>
-        <%= number_to_currency(p.price) %>
-      </div>
-    <% end %>
+<% if @products.empty? %>
+  <h4>No Results Found...</h4>
+<% else %>
+  <% @products.each do |p| %>
+      <%= link_to product_path(p), class: :link_txt_dec do %>
+        <div class="products_all">
+          <% if p.image.present? %>
+            <%= cl_image_tag(p.image)%>
+          <% else %>
+            <%= image_tag "no_image.png" %>
+          <% end %>
+          <%= p.name %>
+          <%= number_to_currency(p.price) %>
+        </div>
+      <% end %>
+  <% end %>
 <% end %>

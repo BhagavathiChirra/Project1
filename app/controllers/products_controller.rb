@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :check_if_logged_in, only: [:index, :show, :new]
-  before_action :check_if_admin, except: [:index, :show]
+  before_action :check_if_admin, except: [:index, :show, :search]
   before_action :get_product, only:[:show, :edit, :update]
 
 
@@ -50,7 +50,7 @@ class ProductsController < ApplicationController
   end
 
   def search
-    @products = Product.where("name ILIKE?", "%#{params[:query]}%")
+    @products = Product.where("name ILIKE ?", "%#{params[:query]}%")
   end
 
   private

@@ -38,7 +38,15 @@ https://proshoppingcart.herokuapp.com/
 
 1. *Admin* Letting the user to Add, Update, Delete a product, if the user is an admin
 
+    * Username : bagi@ga.com
+
+    * Password : chicken
+
 2. *User* Else the user can browse the products and add them to the cart
+
+    * Username : chia@ga.com
+
+    * Password : chicken
 
 **Search**
 
